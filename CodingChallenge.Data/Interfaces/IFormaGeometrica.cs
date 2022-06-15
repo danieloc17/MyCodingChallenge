@@ -2,8 +2,6 @@
 {
     public interface IFormaGeometrica
     {
-        int RecuperarTipo();
-
         string TraducirForma(int cantidad);
 
         decimal CalcularArea();

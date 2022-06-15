@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -46,40 +47,32 @@ namespace CodingChallenge.Data.Classes
                 // HEADER
                 sb.Append("<h1>" + Resources.Etiquetas.TituloReporte + "</h1>");
 
-                int tipo;
-                int[] numero_formas = new int[6];
-                decimal[] area = new decimal[6];
-                decimal[] perimetro = new decimal[6];
-                string[] forma = new string[6];
-
-                for (int i = 0; i < formas.Count; i++)
-                {
-                    tipo = formas[i].RecuperarTipo();
-
-                    numero_formas[tipo] += 1;
-                    area[tipo] += formas[i].CalcularArea();
-                    perimetro[tipo] += formas[i].CalcularPerimetro();
-
-                    if (numero_formas[tipo] < 3)
-                    {
-                        forma[tipo] = formas[i].TraducirForma(numero_formas[tipo]);
-                    }
-                }
+                int numero_formas = 0;
+                decimal area = 0m;
+                decimal perimetro = 0m;
+                string forma = "";
 
                 var numeroTotal = 0;
                 var areaTotal = 0m;
                 var perimetroTotal = 0m;
 
-                for (int i = 1; i < numero_formas.Length; i++)
-                {
-                    if (numero_formas[i] > 0)
-                    {
-                        sb.Append(ObtenerLinea(numero_formas[i], forma[i], area[i], perimetro[i]));
+                var tipos = formas
+                              .GroupBy(p => p.GetType())
+                              .Select(g => g.First())
+                              .ToList();
 
-                        numeroTotal += numero_formas[i];
-                        areaTotal += area[i];
-                        perimetroTotal += perimetro[i];
-                    }
+                foreach (var tipo in tipos)
+                {
+                    numero_formas = (from f in formas where f.GetType().Equals(tipo.GetType()) select f).Count();
+                    forma = (from f in formas where f.GetType().Equals(tipo.GetType()) select f.TraducirForma(numero_formas)).FirstOrDefault();
+                    area = (from f in formas where f.GetType().Equals(tipo.GetType()) select f).Sum(x => x.CalcularArea());
+                    perimetro = (from f in formas where f.GetType().Equals(tipo.GetType()) select f).Sum(x => x.CalcularPerimetro());
+
+                    sb.Append(ObtenerLinea(numero_formas, forma, area, perimetro));
+
+                    numeroTotal += numero_formas;
+                    areaTotal += area;
+                    perimetroTotal += perimetro;
                 }
 
                 // FOOTER

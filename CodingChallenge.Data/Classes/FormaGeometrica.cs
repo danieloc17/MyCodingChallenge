@@ -11,6 +11,5 @@ namespace CodingChallenge.Data.Classes
 {
     public abstract class FormaGeometrica
     {
-        public int Tipo;
     }
 }

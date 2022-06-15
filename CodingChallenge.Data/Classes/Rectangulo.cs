@@ -9,14 +9,8 @@ namespace CodingChallenge.Data.Classes
 
         public Rectangulo(decimal @base, decimal altura)
         {
-            Tipo = 5;
             Base = @base;
             Altura = altura;
-        }
-
-        public int RecuperarTipo()
-        {
-            return Tipo;
         }
 
         public string TraducirForma(int cantidad)

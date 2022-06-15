@@ -9,13 +9,7 @@ namespace CodingChallenge.Data.Classes
 
         public Circulo(decimal radio)
         {
-            Tipo = 3;
             Radio = radio;
-        }
-
-        public int RecuperarTipo()
-        {
-            return Tipo;
         }
 
         public string TraducirForma(int cantidad)

@@ -71,7 +71,7 @@ namespace CodingChallenge.Data.Tests
             var resumen = ReporteFormas.Imprimir(formas, ReporteFormas.Ingles);
 
             Assert.AreEqual(
-                "<h1>Shapes report</h1>2 Squares | Area 29 | Perimeter 28 <br/>3 Triangles | Area 49,64 | Perimeter 51,6 <br/>2 Circles | Area 13,01 | Perimeter 18,06 <br/>TOTAL:<br/>7 shapes Perimeter 97,66 Area 91,65",
+                "<h1>Shapes report</h1>2 Squares | Area 29 | Perimeter 28 <br/>2 Circles | Area 13,01 | Perimeter 18,06 <br/>3 Triangles | Area 49,64 | Perimeter 51,6 <br/>TOTAL:<br/>7 shapes Perimeter 97,66 Area 91,65",
                 resumen);
         }
 
@@ -92,7 +92,7 @@ namespace CodingChallenge.Data.Tests
             var resumen = ReporteFormas.Imprimir(formas, ReporteFormas.Castellano);
 
             Assert.AreEqual(
-                "<h1>Reporte de Formas</h1>2 Cuadrados | Area 29 | Perímetro 28 <br/>3 Triángulos | Area 49,64 | Perímetro 51,6 <br/>2 Círculos | Area 13,01 | Perímetro 18,06 <br/>TOTAL:<br/>7 formas Perímetro 97,66 Area 91,65",
+                "<h1>Reporte de Formas</h1>2 Cuadrados | Area 29 | Perímetro 28 <br/>2 Círculos | Area 13,01 | Perímetro 18,06 <br/>3 Triángulos | Area 49,64 | Perímetro 51,6 <br/>TOTAL:<br/>7 formas Perímetro 97,66 Area 91,65",
                 resumen);
         }
 
@@ -113,7 +113,7 @@ namespace CodingChallenge.Data.Tests
             var resumen = ReporteFormas.Imprimir(formas, ReporteFormas.Portugues);
 
             Assert.AreEqual(
-                "<h1>Relatório de formas</h1>2 Quadrados | Area 29 | Perímetro 28 <br/>3 Triângulos | Area 49,64 | Perímetro 51,6 <br/>2 Círculos | Area 13,01 | Perímetro 18,06 <br/>TOTAL:<br/>7 formas Perímetro 97,66 Area 91,65",
+                "<h1>Relatório de formas</h1>2 Quadrados | Area 29 | Perímetro 28 <br/>2 Círculos | Area 13,01 | Perímetro 18,06 <br/>3 Triângulos | Area 49,64 | Perímetro 51,6 <br/>TOTAL:<br/>7 formas Perímetro 97,66 Area 91,65",
                 resumen);
         }
 

@@ -9,13 +9,7 @@ namespace CodingChallenge.Data.Classes
 
         public TrianguloEquilatero(decimal lado)
         {
-            Tipo = 2;
             Lado = lado;
-        }
-
-        public int RecuperarTipo()
-        {
-            return Tipo;
         }
 
         public string TraducirForma(int cantidad)

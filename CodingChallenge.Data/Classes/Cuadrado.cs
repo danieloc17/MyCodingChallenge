@@ -8,13 +8,7 @@ namespace CodingChallenge.Data.Classes
 
         public Cuadrado(decimal lado)
         {
-            Tipo = 1;
             Lado = lado;
-        }
-
-        public int RecuperarTipo()
-        {
-            return Tipo;
         }
 
         public string TraducirForma(int cantidad)

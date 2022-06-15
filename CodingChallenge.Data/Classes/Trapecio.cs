@@ -12,17 +12,11 @@ namespace CodingChallenge.Data.Classes
 
         public Trapecio(decimal baseMayor, decimal baseMenor, decimal ladoIzquierdo, decimal ladoDerecho, decimal altura)
         {
-            Tipo = 4;
             BaseMayor = baseMayor;
             BaseMenor = baseMenor;
             LadoIzquierdo = ladoIzquierdo;
             LadoDerecho = ladoDerecho;
             Altura = altura;
-        }
-
-        public int  RecuperarTipo()
-        {
-            return Tipo;
         }
 
         public string TraducirForma(int cantidad)
